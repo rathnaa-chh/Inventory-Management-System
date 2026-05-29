@@ -425,4 +425,3 @@ To contribute to this project:
 
 ---
 
-*Built with ❤️ - A complete, production-ready inventory management system*
