@@ -22,17 +22,17 @@ class ProductController extends Controller
 
     return Product::create($request->all());
 } 
-    public function show($id)
+    public function show(int $id)
     {
         return Product::findOrFail($id);
     }
-    public function update(Request $request, $id)
+    public function update(Request $request, int $id)
     {
         $product = Product::findOrFail($id);
         $product->update($request->all());
         return $product;
     }
-    public function destroy($id)
+    public function destroy(int $id)
     {
         Product::destroy($id);
         return response()->json(['message' => 'Deleted']);
