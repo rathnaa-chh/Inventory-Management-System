@@ -230,16 +230,10 @@ Staff:    staff@inventory.com      / password123
 
 ---
 
+
 ## 🔄 Git Repository Structure
 
 ```
-Inventory-Management-System/
-├── Main Branch: Backend (Laravel)
-├── Master Branch: Frontend (React)
-└── Both synced and ready for production
-```
-
----
 
 ## 📦 Dependencies
 

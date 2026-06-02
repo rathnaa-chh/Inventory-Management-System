@@ -19,5 +19,13 @@ export const productAPI = {
 // CATEGORIES
 // =========================
 export const categoryAPI = {
-  getAll: () => ApiClient.get("/categories")
+  getAll: () => ApiClient.get("/categories"),
+
+  create: (data: any) => ApiClient.post("/categories", data),
+
+  update: (id: number, data: any) =>
+    ApiClient.put(`/categories/${id}`, data),
+
+  delete: (id: number) =>
+    ApiClient.delete(`/categories/${id}`)
 };

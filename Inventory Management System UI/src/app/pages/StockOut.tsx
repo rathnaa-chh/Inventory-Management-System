@@ -149,9 +149,13 @@ export default function StockOut() {
     return (
       <div className="p-8">
         <div className="flex items-center justify-center h-64">
-          <div className="text-center">
-            <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
-            <p className="mt-4 text-gray-600">Loading products...</p>
+          <div className="flex flex-col items-center justify-center gap-4">
+            {/* Smooth spinner */}
+            <div className="relative w-12 h-12">
+              <div className="absolute inset-0 rounded-full border-4 border-slate-200 dark:border-slate-700"></div>
+              <div className="absolute inset-0 rounded-full border-4 border-transparent border-t-blue-600 border-r-blue-400 animate-spin"></div>
+            </div>
+            <p className="text-center text-gray-600">Loading products...</p>
           </div>
         </div>
       </div>

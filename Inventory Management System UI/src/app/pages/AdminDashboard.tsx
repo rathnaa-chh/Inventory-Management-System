@@ -3,6 +3,7 @@ import { Package, FolderTree, AlertTriangle, TrendingUp } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import StatCard from '../components/StatCard';
 import DataTable from '../components/DataTable';
+import PageLoader from '../components/PageLoader';
 import { useState, useEffect } from 'react';
 import { productService, categoryService, transactionService } from '../../api/services';
 import { useNotificationService } from '../services/notificationService';
@@ -154,16 +155,7 @@ export default function AdminDashboard() {
   }, []);
 
   if (loading) {
-    return (
-      <div className="p-8">
-        <div className="flex items-center justify-center h-screen">
-          <div className="text-center">
-            <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
-            <p className="mt-4 text-gray-600">Loading dashboard data...</p>
-          </div>
-        </div>
-      </div>
-    );
+    return <PageLoader message="Loading dashboard data..." />;
   }
 
   return (
