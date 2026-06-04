@@ -280,7 +280,7 @@ export default function Products() {
               { key: "quantity", label: "Quantity" },
 
               {
-                key: "quantity",
+                key: "status",
                 label: "Status",
                 render: (value) => {
                   const status = getStatus(value);
