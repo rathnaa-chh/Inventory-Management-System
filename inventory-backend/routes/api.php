@@ -7,6 +7,11 @@ use App\Http\Controllers\API\ProductController;
 use App\Http\Controllers\API\TransactionController;
 use App\Http\Controllers\API\UserController;
 
+// Health check route
+Route::get('/health', function () {
+    return response()->json(['status' => 'ok', 'message' => 'Backend is running']);
+});
+
 // Auth routes (public)
 Route::post('/auth/register', [AuthController::class, 'register']);
 Route::post('/auth/login', [AuthController::class, 'login']);
