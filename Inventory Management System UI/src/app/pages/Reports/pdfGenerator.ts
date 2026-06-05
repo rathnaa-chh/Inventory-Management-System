@@ -202,7 +202,7 @@ const generatePDFProductRows = (
       `$${p.price}`,
       String(p.quantity),
       `$${(p.price * p.quantity).toLocaleString()}`,
-      String(p.reorder_level || 10),
+      // String(p.reorder_level || 10),
       p.supplier || 'N/A',
     ];
 
@@ -259,8 +259,8 @@ export const generateInventoryPDF = (products: Product[], metrics: ReportMetrics
   pdf.text('Inventory Details', PDF_CONFIG.pageMargin, yPosition);
   yPosition += 6;
 
-  const tableHeaders = ['STATUS', 'ID', 'NAME', 'CATEGORY', 'PRICE', 'QTY', 'VALUE', 'REORDER', 'SUPPLIER'];
-  const columnWidths = [14, 10, 26, 26, 14, 10, 18, 18, 18];
+  const tableHeaders = ['STATUS', 'ID', 'NAME', 'CATEGORY', 'PRICE', 'QTY', 'VALUE', 'SUPPLIER'];
+  const columnWidths = [14, 10, 26, 26, 18, 16, 18, 18];
 
   yPosition = generatePDFTableHeader(pdf, pageWidth, yPosition, tableHeaders, columnWidths);
   yPosition = generatePDFProductRows(pdf, pageWidth, pageHeight, yPosition, products, tableHeaders, columnWidths);
