@@ -108,8 +108,10 @@ export default function Products() {
 
       if (editingId) {
         await productAPI.update(editingId, payload);
+        alert("Product updated successfully!");
       } else {
         await productAPI.create(payload);
+        alert("Product created successfully!");
       }
 
       setFormData({
@@ -138,6 +140,7 @@ export default function Products() {
     try {
       await productAPI.delete(id);
       mutate();
+      alert("Product deleted successfully!");
     } catch {
       alert("Delete failed");
     }

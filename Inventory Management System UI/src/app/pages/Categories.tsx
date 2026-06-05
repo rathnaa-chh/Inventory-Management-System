@@ -60,8 +60,10 @@ export default function Categories() {
 
       if (editingId) {
         await categoryAPI.update(editingId, payload);
+        alert("Category updated successfully!");
       } else {
         await categoryAPI.create(payload);
+        alert("Category created successfully!");
       }
 
       setFormData({ name: "", description: "" });
@@ -80,6 +82,7 @@ export default function Categories() {
     try {
       await categoryAPI.delete(id);
       mutate();
+      alert("Category deleted successfully!");
     } catch (err) {
       console.error("Error deleting category:", err);
       alert("Failed to delete category");
